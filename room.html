@@ -14,7 +14,7 @@
         /* Global Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #E3EFD3;
             color: #333;
             line-height: 1.6;
         }
@@ -25,15 +25,20 @@
         }
         /* Header */
         header {
-            background: url('https://media-cdn.tripadvisor.com/media/photo-c/2560x500/07/ee/45/a2/paysage-agricole.jpg') center/cover no-repeat;
             height: 250px;
             position: relative;
             text-align: center;
-            color: #fff;
+            background-color: #AFD198;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 2s ease-in-out;
         }
         header h1 {
             font-size: 3rem;
             margin-top: 0px;
+            opacity: 0;
+            animation: slideInFromTop 1s ease-out forwards 1s;
         }
         /* Navigation */
         nav {
@@ -47,9 +52,21 @@
             color: #fff;
             padding: 10px 20px;
             transition: background-color 0.3s ease;
+            position: relative;
         }
-        nav a:hover {
-            background-color: #555;
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            left: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        nav a:hover::after {
+            transform: scaleX(1);
         }
         /* Room Cards */
         .room-cards {
@@ -64,10 +81,13 @@
             border-radius: 5px;
             overflow: hidden;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
         }
         .room-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .room-card img {
             width: 100%;
@@ -104,13 +124,50 @@
             text-align: center;
             padding: 20px 0;
             margin-top: 100px;
-            bottom: 0;
+            
             width: 100%;
+            
         }
         footer p {
             font-size: 1rem;
         }
-        
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            
+           
+            .jos {
+                padding: 10px 0;
+                height: 400px;}
+            
+        }
     </style>
 </head>
 <body>
@@ -120,8 +177,7 @@
     <nav>
         <a href="home3.html">Casa</a>
         <a href="room.html">Camere</a>
-         
-        <a href="#">Contact</a>
+        <a href="contact2.html">Contact</a>
     </nav>
     <div class="container">
         <div class="room-cards">
@@ -130,7 +186,7 @@
                 <div class="room-card-content">
                     <h3>Deluxe Room</h3>
                     <p>Enjoy our spacious deluxe room with modern amenities.</p>
-                    <a class="l3"href="#">rezerva</a>
+                    <a href="mailto:dordemoieciu@gmail.com?subject=Reservation%20Request%20for%20Deluxe%20Room&body=Please%20provide%20your%20details%20for%20the%20reservation.">Book Now</a>
                 </div>
             </div>
             <div class="room-card">
@@ -138,7 +194,7 @@
                 <div class="room-card-content">
                     <h3>Standard Room</h3>
                     <p>Comfortable standard room suitable for solo travelers.</p>
-                    <a href="#">Book Now</a>
+                    <a href="mailto:dordemoieciu@gmail.com?subject=Reservation%20Request%20for%20Standard%20Room&body=Please%20provide%20your%20details%20for%20the%20reservation.">Book Now</a>
                 </div>
             </div>
             <div class="room-card">
@@ -146,14 +202,14 @@
                 <div class="room-card-content">
                     <h3>Executive Suite</h3>
                     <p>Luxurious executive suite with a stunning view.</p>
-                    <a href="#">Book Now</a>
+                    <a href="mailto:dordemoieciu@gmail.com?subject=Reservation%20Request%20for%20Executive%20Suite&body=Please%20provide%20your%20details%20for%20the%20reservation.">Book Now</a>
                 </div>
             </div>
             <!-- Add more room cards here if needed -->
         </div>
     </div>
     <div class="jos">
-        <p>&copy; 2024 Dor de Moieciu.</p>
+        &copy; 2024 Dor de Moieciu.
     </div>
 </body>
 </html>
