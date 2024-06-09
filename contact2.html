@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Information - Guest House</title>
+    <title>Contact - Guest House</title>
     <style>
         /* Reset CSS */
         * {
@@ -14,7 +14,7 @@
         /* Global Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #E3EFD3;
             color: #333;
             line-height: 1.6;
         }
@@ -25,15 +25,20 @@
         }
         /* Header */
         header {
-            background: url('header-bg.jpg') center/cover no-repeat;
-            height: 400px;
+            height: 250px;
             position: relative;
             text-align: center;
-            color: #fff;
+            background-color: #AFD198;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 2s ease-in-out;
         }
         header h1 {
             font-size: 3rem;
-            margin-top: 100px;
+            margin-top: 0px;
+            opacity: 0;
+            animation: slideInFromTop 1s ease-out forwards 1s;
         }
         /* Navigation */
         nav {
@@ -47,65 +52,160 @@
             color: #fff;
             padding: 10px 20px;
             transition: background-color 0.3s ease;
+            position: relative;
         }
-        nav a:hover {
-            background-color: #555;
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            left: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
-        /* Information Section */
-        .information-section {
-            margin-top: 50px;
+        nav a:hover::after {
+            transform: scaleX(1);
+        }
+        /* Contact Section */
+        .contact-section {
+            padding: 50px 0;
             text-align: center;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
         }
-        .information-section p {
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #345635;
+        }
+        .contact-section p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            color: #345635;
         }
-        .contact-info {
-            margin-top: 30px;
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .contact-info p {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
+        .contact-form input, .contact-form textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #345635;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #345635;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: #2c4c2c;
+        }
+        /* Map */
+        .mapouter {
+            margin: 50px auto;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+        .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+            width: 100%;
+            height: 400px;
+        }
+        .gmap_iframe {
+            width: 100% !important;
+            height: 400px !important;
         }
         /* Footer */
-        footer {
+        .jos {
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 20px 0;
-            position: fixed;
+            margin-top: 100px;
             bottom: 0;
             width: 100%;
         }
         footer p {
             font-size: 1rem;
         }
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            
+           
+            .jos {
+                padding: 10px 0;
+                height: 400px;}
+            
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Our Information</h1>
+        <h1>Contact</h1>
     </header>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Rooms</a>
-        <a href="#">Amenities</a>
-        <a href="#">Contact Us</a>
+        <a href="home3.html">Casa</a>
+        <a href="room.html">Camere</a>
+        <a href="contact2.html">Contact</a>
     </nav>
     <div class="container">
-        <div class="information-section">
-            <h2>Welcome to Our Guest House</h2>
-            <p>We are a cozy guest house located in a peaceful neighborhood, offering comfortable accommodation and exceptional service to our guests. Our guest house is designed to provide a home away from home experience, whether you are traveling for business or leisure.</p>
-            <p>At Our Guest House, we pride ourselves on our attention to detail and personalized hospitality. From the moment you arrive until the time you depart, our dedicated staff is committed to ensuring your stay is memorable and enjoyable.</p>
-            <div class="contact-info">
-                <p>Contact us:</p>
-                <p>Phone: +1-123-456-7890</p>
-                <p>Email: info@ourguesthouse.com</p>
+        <section class="contact-section">
+            <h2>Contactați-ne</h2>
+            <p>Completează formularul de mai jos pentru a ne trimite un mesaj.</p>
+            <div class="contact-form">
+                <input type="text" placeholder="Nume" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Subiect" required>
+                <textarea rows="5" placeholder="Mesaj" required></textarea>
+                <button type="submit">Trimite</button>
+            </div>
+        </section>
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=1100&amp;height=400&amp;hl=en&amp;q=Dor de Moieciu&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
             </div>
         </div>
     </div>
-    <footer>
-        <p>&copy; 2024 Our Guest House. All rights reserved.</p>
-    </footer>
+    <div class="jos">
+        <p>&copy; 2024 Dor de Moieciu.</p>
+    </div>
 </body>
 </html>
