@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest House</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #666;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+        }
+        nav a:hover {
+            background-color: #444;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .welcome-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .welcome-section h1 {
+            font-size: 36px;
+        }
+        .welcome-section p {
+            font-size: 18px;
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .animate-charcter
+{
+    font-style: normal;
+    margin: 0  auto;
+    margin-top:0px;
+    
+    
+    font-family: "Lucida Console", "Courier New", monospace;
+    
+   
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #13fff7 67%,
+    #00ff9d 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 80px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 100% center;
+  }
+}
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="row">
+            <div class="col-md-12 text-center">
+              <h1 class="animate-charcter"> DOR de MOECIU</h1>
+            </div>
+          </div>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Camere</a>
+        <a href="#">Galerie</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="container">
+        <section class="welcome-section">
+            <h2>Your Home Away from Home</h2>
+            <p>Experience comfort and relaxation at our cozy guest house.</p>
+        </section>
+        <section class="image-container">
+            <img src="assets/ex.jpg" alt="Guest House Image">
+        </section>
+    </div>
+    <footer>
+        <p>&copy; Dor de moieciu</p>
+    </footer>
+</body>
+</html>

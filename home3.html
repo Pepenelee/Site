@@ -31,12 +31,10 @@
         }
         /* Header */
         header {
-            
+            background: url(https://media.istockphoto.com/id/1319099155/ro/fotografie/dealuri-cu-sate-%C8%99i-p%C4%83duri-%C3%AEn-transilvania-rom%C3%A2nia-cu-mun%C8%9Bii-bucegi-%C3%AEn-fundal-la-apus.jpg?s=1024x1024&w=is&k=20&c=8JR4JvSr8lXhps0QPM4G9xJCrQXiuPytbhdX7x8_zh4=);
             height: 250px;
-              background: url(https://images.unsplash.com/photo-1638381746564-a18f67640356?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
             position: relative;
             text-align: center;
-            
             animation: slideInDown 1s ease-in-out;
         }
         @keyframes slideInDown {
@@ -49,7 +47,6 @@
         }
         header h3 {
             font-size: 3rem;
-            
         }
         /* Navigation */
         nav {
@@ -98,17 +95,18 @@
         }
         .welcome-section h2 {
             font-size: 2.5rem;
-            margin-bottom: 20px;
+            
             color: #345635;
         }
         .welcome-section p {
             font-size: 1.2rem;
-            margin-bottom: 40px;
+            
             color: #345635;
         }
         .gallery-container {
             margin-bottom: 40px;
             animation: slideInUp 1s ease-in-out;
+            
         }
         @keyframes slideInUp {
             from {
@@ -119,28 +117,41 @@
             }
         }
         .gallery-section {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+           
+        }
+        .gallery-wrapper {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
+            transition: transform 0.5s ease-in-out;
         }
         .gallery-item {
-            margin: 0 10px;
-            cursor: pointer;
+            min-width: 100%;
+            box-sizing: border-box;
         }
         .gallery-item img {
-            max-width: 100%;
-            height: auto;
+            width: 50%;
+            height: 100%;
             border-radius: 5px;
-            transition: transform 0.3s ease;
-        }
-        .gallery-item img:hover {
-            transform: scale(1.05);
+            margin-left: 260px;
         }
         .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
             cursor: pointer;
-            font-size: 30px;
-            margin: 0 10px;
+            z-index: 10;
+        }
+        .arrow.left {
+            margin-left: 180px;
+        }
+        .arrow.right {
+            margin-left: 840px;
         }
         /* Footer */
         .jos {
@@ -149,7 +160,7 @@
             text-align: center;
             padding: 20px 0;
             margin-top: 150px;
-            margin-bottom: 0;
+            bottom: 0;
             width: 100%;
             animation: slideInUp 1s ease-in-out;
         }
@@ -180,10 +191,17 @@
                 background-position: 200% center;
             }
         }
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
         .mapouter {
             margin: 50px auto;
             animation: fadeInUp 0.5s ease forwards;
-            
         }
         .gmap_canvas {
             overflow: hidden;
@@ -195,15 +213,13 @@
             width: 100% !important;
             height: 400px !important;
         }
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(0);
-            }
-        }
         @media screen and (max-width: 767px) {
+            .gallery-item img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            margin-left: 0px;
+        }
             .animate-charcter {
                 font-size: 40px;
             }
@@ -231,25 +247,13 @@
             .welcome-section p {
                 font-size: 1rem; 
             }
+            .arrow.left {
+            margin-left: 5px;
+        }
+        .arrow.right {
+            right: 0px;
+        }
            
-           
-            .jos p {
-                font-size: 0.8rem; 
-            }
-            .mapouter {
-                position: relative;
-                text-align: right;
-                margin-left: 0px;
-                animation: slideInLeft 1s ease-in-out;
-            }
-            @keyframes slideInLeft {
-                from {
-                    transform: translateX(-100%);
-                }
-                to {
-                    transform: translateX(0);
-                }
-            }
         }
     </style>
 </head>
@@ -257,9 +261,9 @@
     <header>
         <div class="row">
             <div class="col-md-12 text-center">
-              <h3 class="animate-charcter">𝐃𝐨𝐫 𝐝𝐞 𝐌𝐨𝐢𝐞𝐜𝐢𝐮</h3>
+                <h3 class="animate-charcter">𝐃𝐨𝐫 𝐝𝐞 𝐌𝐨𝐢𝐞𝐜𝐢𝐮</h3>
             </div>
-          </div>
+        </div>
     </header>
     <nav>
         <a href="home3.html">Casa</a>
@@ -273,15 +277,19 @@
                 <p>⸙ Dor de Moeciu înseamnă: liniște, peisaje superbe la doi pași de pensiunea unui bucătar cu carieră în ONT-ul de altădată din Poiana Brașov precum si gospodăria țărănească a unui baci autentic care a urcat zeci de ani la stânile din Bucegi. Deci ,,Dor de Moeciu” îndemână dor de frumusețea, curățenia, gustul și poveștile Moeciului de altădată ! ⸙</p>
             </section>
             <div class="gallery-section">
-                <div class="gallery-item">
-                    <img src="ex2.jpeg" alt="Gallery Image 1">
+                <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+                <div class="gallery-wrapper">
+                    <div class="gallery-item">
+                        <img src="assets/ex2.jpeg" alt="Gallery Image 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/ex3.jpeg" alt="Gallery Image 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/ex4.jpeg" alt="Gallery Image 3">
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="ex3.jpeg" alt="Gallery Image 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="ex4.jpeg" alt="Gallery Image 3">
-                </div>
+                <button class="arrow right" onclick="nextSlide()">&#10095;</button>
             </div>
         </div>
         <div class="gallery-container">
@@ -290,15 +298,19 @@
                 <p>⸙ La foișoare: Intr-un sat turistic aglomerat, pensiunea noastră are destule unghiuri cu peisaje care să vă satisfacă dorul de munte ! Stați cu fața la pensiune vedeți Colțul lui Pițigoi si Coasta Popii ! Dacă vă întoarceți vedeți Dealul Laichii si potecile care urcă la Chiciură ! Hotarul nostru cu drumul este apa Moeciului ! ⸙</p>
             </section>
             <div class="gallery-section">
-                <div class="gallery-item">
-                    <img src="grad1.jpg" alt="Gallery Image 4">
+                <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+                <div class="gallery-wrapper">
+                    <div class="gallery-item">
+                        <img src="assets/grad2.jpg" alt="Gallery Image 4">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/grad3.jpeg" alt="Gallery Image 5">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/grad4.jpeg" alt="Gallery Image 6">
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="grad2.jpg" alt="Gallery Image 5">
-                </div>
-                <div class="gallery-item">
-                    <img src="grad3.jpeg" alt="Gallery Image 6">
-                </div>
+                <button class="arrow right" onclick="nextSlide()">&#10095;</button>
             </div>
         </div>
         <div class="gallery-container">
@@ -307,18 +319,22 @@
                 <p>⸙ La sala de mese: Aveți spațiu suficient sa veniți cu prietenii pentru o petrecere de neuitat ! Va garantam o bucătarie profesionistă cu tot ce aveți nevoie. Designul sălii nu este chiar de Moeciu :) însă gazdele va garantam ca sunt moeceni din moși strămoși ! ⸙</p>
             </section>
             <div class="gallery-section">
-                <div class="gallery-item">
-                    <img src="mes1.jpg" alt="Gallery Image 7">
+                <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+                <div class="gallery-wrapper">
+                    <div class="gallery-item">
+                        <img src="assets/mes1.jpg" alt="Gallery Image 7">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/mes2.jpeg" alt="Gallery Image 8">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/mes3.jpeg" alt="Gallery Image 9">
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="mes2.jpeg" alt="Gallery Image 8">
-                </div>
-                <div class="gallery-item">
-                    <img src="mes3.jpeg" alt="Gallery Image 9">
-                </div>
+                <button class="arrow right" onclick="nextSlide()">&#10095;</button>
             </div>
         </div>
-       <div class="mapouter">
+        <div class="mapouter">
             <div class="gmap_canvas">
                 <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=1100&amp;height=400&amp;hl=en&amp;q=Dor de Moieciu&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
             </div>
@@ -327,6 +343,27 @@
     <footer class="jos">
         <p>&copy; 2024 Dor de Moieciu.</p>
     </footer>
-    
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.gallery-wrapper');
+            slides.forEach(slide => {
+                slide.style.transform = `translateX(${-index * 100}%)`;
+            });
+        }
+
+        function nextSlide() {
+            const slides = document.querySelectorAll('.gallery-wrapper')[0].children.length;
+            currentIndex = (currentIndex + 1) % slides;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            const slides = document.querySelectorAll('.gallery-wrapper')[0].children.length;
+            currentIndex = (currentIndex - 1 + slides) % slides;
+            showSlide(currentIndex);
+        }
+    </script>
 </body>
 </html>
