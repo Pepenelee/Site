@@ -180,9 +180,19 @@
             }
         }
         .mapouter {
-            margin-bottom: 100px;
-            margin-left: 200px;
-            animation: slideInRight 1s ease-in-out;
+            margin: 50px auto;
+            animation: fadeInUp 0.5s ease forwards;
+            
+        }
+        .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+            width: 100%;
+            height: 400px;
+        }
+        .gmap_iframe {
+            width: 100% !important;
+            height: 400px !important;
         }
         @keyframes slideInRight {
             from {
