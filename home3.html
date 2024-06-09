@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dor de Moieciu</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Global Styles */
+        body {
+            background-color: #E3EFD3;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        header {
+            background: url('https://media-cdn.tripadvisor.com/media/photo-c/2560x500/07/ee/45/a2/paysage-agricole.jpg') center/cover no-repeat;
+            height: 250px;
+            position: relative;
+            text-align: center;
+            color: #fff;
+            animation: slideInDown 1s ease-in-out;
+        }
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        header h3 {
+            font-size: 3rem;
+        }
+        /* Navigation */
+        nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        /* Main Content */
+        .welcome-section {
+            padding: 50px 0;
+            text-align: center;
+            animation: zoomIn 1s ease-in-out;
+        }
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .welcome-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #345635;
+        }
+        .welcome-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #345635;
+        }
+        .gallery-container {
+            margin-bottom: 40px;
+            animation: slideInUp 1s ease-in-out;
+        }
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        .gallery-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .gallery-item {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .arrow {
+            cursor: pointer;
+            font-size: 30px;
+            margin: 0 10px;
+        }
+        /* Footer */
+        .jos {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 150px;
+            bottom: 0;
+            width: 100%;
+            animation: slideInUp 1s ease-in-out;
+        }
+        .jos p {
+            font-size: 1rem;
+        }
+        .animate-charcter {
+            font-style: normal;
+            margin: 0 auto;
+            margin-top: 50px;
+            margin-left: 0px;
+            font-family: "Lucida Console", "Courier New", monospace;
+            background-image: linear-gradient(-225deg, #231557 0%, #44107a 29%, #13fff7 67%, #00ff9d 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 2s linear infinite;
+            display: inline-block;
+            font-size: 80px;
+        }
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+        .mapouter {
+            margin-bottom: 100px;
+            margin-left: 200px;
+            animation: slideInRight 1s ease-in-out;
+        }
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        @media screen and (max-width: 767px) {
+            .animate-charcter {
+                font-size: 40px;
+            }
+            /* Adjust header styles */
+            header {
+                height: 200px; /* Decrease header height */
+            }
+            header h3 {
+                font-size: 2rem; /* Decrease font size */
+            }
+            /* Adjust navigation styles */
+            nav {
+                padding: 10px 0;
+            }
+            nav a {
+                padding: 10px; /* Increase padding for touch */
+            }
+            /* Adjust gallery styles */
+            .gallery-item {
+                margin: 0 5px; /* Reduce margin */
+            }
+            .welcome-section h2 {
+                font-size: 1.8rem; /* Decrease font size */
+            }
+            .welcome-section p {
+                font-size: 1rem; /* Decrease font size */
+            }
+            /* Adjust footer styles */
+            .jos {
+                padding: 10px 0;
+            }
+            .jos p {
+                font-size: 0.8rem; /* Decrease font size */
+            }
+            .mapouter {
+                position: relative;
+                text-align: right;
+                margin-left: 0px;
+                animation: slideInLeft 1s ease-in-out;
+            }
+            @keyframes slideInLeft {
+                from {
+                    transform: translateX(-100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="row">
+            <div class="col-md-12 text-center">
+              <h3 class="animate-charcter">𝐃𝐨𝐫 𝐝𝐞 𝐌𝐨𝐢𝐞𝐜𝐢𝐮</h3>
+            </div>
+          </div>
+    </header>
+    <nav>
+        <a href="#">Casa</a>
+        <a href="room.html">Camere</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="gallery-container">
+            <section class="welcome-section">
+                <h2>ᨒ↟☼ 𝓟𝓮𝓷𝓼𝓲𝓾𝓷𝓮𝓪☼ ↟↟ᨒᵕ̈</h2>
+                <p>⸙ Dor de Moeciu înseamnă: liniște, peisaje superbe la doi pași de pensiunea unui bucătar cu carieră în ONT-ul de altădată din Poiana Brașov precum si gospodăria țărănească a unui baci autentic care a urcat zeci de ani la stânile din Bucegi. Deci ,,Dor de Moeciu” îndemână dor de frumusețea, curățenia, gustul și poveștile Moeciului de altădată ! ⸙</p>
+            </section>
+            <div class="gallery-section">
+                <div class="gallery-item">
+                    <img src="assets/ex2.jpeg" alt="Gallery Image 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/ex3.jpeg" alt="Gallery Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/ex4.jpeg" alt="Gallery Image 3">
+                </div>
+            </div>
+        </div>
+        <div class="gallery-container">
+            <section class="welcome-section">
+                <h2>ᨒ↟↟☼ 𝓛𝓸𝓬𝓾𝓻𝓲𝓵𝓮 𝓭𝓮 𝓻𝓮𝓵𝓪𝔁𝓪𝓻𝓮 𝓮𝔁𝓽𝓮𝓻𝓲𝓸𝓪𝓻𝓮, 𝓭𝓮 𝓹𝓮 𝓵â𝓷𝓰ă 𝓹𝓮𝓷𝓼𝓲𝓾𝓷𝓮 ☼↟↟ᨒᵕ̈</h2>
+                <p>⸙ La foișoare: Intr-un sat turistic aglomerat, pensiunea noastră are destule unghiuri cu peisaje care să vă satisfacă dorul de munte ! Stați cu fața la pensiune vedeți Colțul lui Pițigoi si Coasta Popii ! Dacă vă întoarceți vedeți Dealul Laichii si potecile care urcă la Chiciură ! Hotarul nostru cu drumul este apa Moeciului ! ⸙</p>
+            </section>
+            <div class="gallery-section">
+                <div class="gallery-item">
+                    <img src="assets/grad1.jpg" alt="Gallery Image 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/grad2.jpg" alt="Gallery Image 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/grad3.jpeg" alt="Gallery Image 6">
+                </div>
+            </div>
+        </div>
+        <div class="gallery-container">
+            <section class="welcome-section">
+                <h2>ᨒ↟☼ 𝓢𝓪𝓵𝓪 de mese ↟↟ᨒᵕ̈</h2>
+                <p>⸙ La sala de mese: Aveți spațiu suficient sa veniți cu prietenii pentru o petrecere de neuitat ! Va garantam o bucătarie profesionistă cu tot ce aveți nevoie. Designul sălii nu este chiar de Moeciu :) însă gazdele va garantam ca sunt moeceni din moși strămoși ! ⸙</p>
+            </section>
+            <div class="gallery-section">
+                <div class="gallery-item">
+                    <img src="assets/mes1.jpg" alt="Gallery Image 7">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/mes2.jpeg" alt="Gallery Image 8">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/mes3.jpeg" alt="Gallery Image 9">
+                </div>
+            </div>
+        </div>
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=629&amp;height=400&amp;hl=en&amp;q=Dor de Moieciu&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                <a href="https://connectionsgame.org/">Connections Unlimited</a>
+            </div>
+            <style>.mapouter{position:relative;text-align:right;width:629px;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:629px;height:400px;}.gmap_iframe {width:629px!important;height:400px!important;}</style>
+        </div>
+    </div>
+    <footer class="jos">
+        <p>&copy; 2024 Dor de Moieciu.</p>
+    </footer>
+    <script>
+        let slideIndex = [1, 1, 1];
+        showSlides(1, 1);
+        showSlides(1, 2);
+        showSlides(1, 3);
+
+        function nextSlide(n) {
+            showSlides(slideIndex[n-1] += 1, n);
+        }
+
+        function prevSlide(n) {
+            showSlides(slideIndex[n-1] -= 1, n);
+        }
+
+        function showSlides(n, no) {
+            let i;
+            const slides = document.querySelectorAll(`.gallery-section:nth-child(${no}) .gallery-item`);
+            if (n > slides.length) {slideIndex[no-1] = 1}    
+            if (n < 1) {slideIndex[no-1] = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex[no-1]-1].style.display = "block";  
+        }
+    </script>
+</body>
+</html>
